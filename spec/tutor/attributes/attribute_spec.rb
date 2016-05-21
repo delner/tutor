@@ -85,7 +85,7 @@ describe Tutor::Attributes::Attribute do
       end
     end
 
-    shared_examples_for "a method adder" do |name:, custom_attribute:|
+    shared_examples_for "a method adder" do |name, custom_attribute|
       it { is_expected.to be_a_kind_of(Tutor::Attributes::Method) }
       it { subject; expect(klass.method_defined?(name)).to be true }
       context "with a custom method" do
@@ -107,13 +107,13 @@ describe Tutor::Attributes::Attribute do
     describe "#add_reader_method" do
       subject { super().add_reader_method(klass) }
       it { method = subject; expect(instance.reader_method).to eq(method) }
-      it_behaves_like "a method adder", name: :test, custom_attribute: :get
+      it_behaves_like "a method adder", :test, :get
     end
 
     describe "#add_writer_method" do
       subject { super().add_writer_method(klass) }
       it { method = subject; expect(instance.writer_method).to eq(method) }
-      it_behaves_like "a method adder", name: :test=, custom_attribute: :set
+      it_behaves_like "a method adder",:test=, :set
     end
   end
 end
