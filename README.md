@@ -1,7 +1,7 @@
 Tutor
 ==========
 
-[![Build Status](https://travis-ci.org/delner/tutor.svg?branch=master)](https://travis-ci.org/delner/tutor) ![Gem Version](https://badge.fury.io/rb/tutor.svg)
+[![Build Status](https://travis-ci.org/delner/tutor.svg?branch=master)](https://travis-ci.org/delner/tutor) ![Gem Version](https://img.shields.io/gem/v/tutor.svg?maxAge=2592000)
 ###### *For Ruby 2+*
 
 *Supplemental teachings for your Ruby classes.*
