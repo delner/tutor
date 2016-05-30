@@ -40,7 +40,7 @@ module Tutor::Attributes
         default_attributes = object.class.attributes.select { |attribute| !attributes.has_key?(attribute.name) }
         default_attributes.each do |attribute|
           # Do them individually so one default can use another
-          set_attribute(attribute.name, attribute.default_value_for(object))
+          set_attribute(attribute.name, attribute.default_value_for(object)) if !attribute.default.nil?
         end
       end
     end
