@@ -44,7 +44,7 @@ module Tutor::Attributes
       self.writer_method = add_method(
         klass,
         "#{self.name}=".to_sym,
-        pre_execute: lambda { |object, value| self.check_value_type!(value) },
+        pre_execute: lambda { |object, value| self.check_value_type!(value, name: self.name) },
         body: self.set
       )
     end
